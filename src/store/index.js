@@ -4,15 +4,15 @@ import storage from "redux-persist/lib/storage"; // defaults to localStorage for
 import createSagaMiddleware from "redux-saga";
 import { createBrowserHistory } from "history";
 import { combineReducers } from "redux";
-import { CookieStorage } from "redux-persist-cookie-storage";
-import Cookies from "cookies-js";
+// import { CookieStorage } from "redux-persist-cookie-storage";
+// import Cookies from "cookies-js";
 
 // import history from "../services/history";
 import createStore from "./createStore";
 // import rootReducer from "./modules/rootReducer";
 import rootSaga from "./modules/rootSaga";
 import {
-  authReducer,
+  // authReducer,
   createRootReducer,
   createRouterReducer,
 } from "./modules/reducers";
@@ -46,20 +46,20 @@ const rootPersistConfig = {
   // blacklist: ["auth"],
 };
 
-const authPersistConfig = {
-  key: "auth",
-  storage: new CookieStorage(Cookies, {
-    expiration: {
-      default: 365 * 86400, // Cookies expire after one year
-      storeKey: 600, // State in key `storeKey` expires after 10 minutes
-    },
-    setCookieOptions: {
-      path: "/mypath",
-      domain: "localhost",
-    },
-  }),
-  // blacklist: ["somethingTemporary"],
-};
+// const authPersistConfig = {
+//   key: "auth",
+//   storage: new CookieStorage(Cookies, {
+//     expiration: {
+//       default: 365 * 86400, // Cookies expire after one year
+//       storeKey: 600, // State in key `storeKey` expires after 10 minutes
+//     },
+//     setCookieOptions: {
+//       path: "/mypath",
+//       domain: "localhost",
+//     },
+//   }),
+//   // blacklist: ["somethingTemporary"],
+// };
 
 // const routerReducer = createRootReducer(history);
 

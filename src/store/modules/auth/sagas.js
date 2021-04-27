@@ -1,5 +1,5 @@
 import { push } from "connected-react-router";
-import { call, all, takeLatest, put, select } from "redux-saga/effects";
+import { call, all, takeLatest, put } from "redux-saga/effects";
 import Cookies from "js-cookie";
 import * as api from "./repository";
 
@@ -30,6 +30,8 @@ function* signIn({ payload }) {
       type: "@authentication/SET_IS_AUTHENTICATE_SUCCESS",
       payload: true,
     });
+
+    yield put(push("/"));
   } catch (err) {
     console.log(err);
     yield put({

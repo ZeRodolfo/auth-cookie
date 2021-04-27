@@ -1,6 +1,6 @@
 import { getSlug, getHost } from "../../utils/getHost";
 import Cookies from "js-cookie";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 function Dashboard() {
   useEffect(() => {

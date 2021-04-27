@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-import { store } from "../store";
+// import { store } from "../store";
 
 const ENVIROMENT_SETUP = (isLogin = false) => {
   const api = axios.create({
