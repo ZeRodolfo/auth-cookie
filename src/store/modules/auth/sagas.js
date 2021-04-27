@@ -17,7 +17,7 @@ function* signIn({ payload }) {
     } else if (host === "https://solides.jobs") {
       urlResult = `solides.jobs`;
     } else {
-      urlResult = "netlify.app";
+      urlResult = ".netlify.app";
     }
 
     Cookies.set("ACCESS", "teste", { domain: urlResult });
