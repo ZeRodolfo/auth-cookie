@@ -10,9 +10,6 @@ function* signIn({ payload }) {
       password: payload.password,
     });
 
-    Cookies.set("authentication", response, { path: "/", domain: "localhost" });
-    Cookies.set("name", "value", { domain: "homol.jobs" });
-
     const host = "";
     let urlResult;
     if (host === "https://homol.solides.jobs") {
@@ -20,10 +17,13 @@ function* signIn({ payload }) {
     } else if (host === "https://solides.jobs") {
       urlResult = `solides.jobs`;
     } else {
-      urlResult = "127.0.0.1";
+      urlResult = "netlify.app";
     }
 
     Cookies.set("ACCESS", "teste", { domain: urlResult });
+
+    Cookies.set("authentication", response, { path: "/", domain: urlResult });
+    Cookies.set("name", "value", { domain: urlResult });
 
     console.log("response", response);
     yield put({
