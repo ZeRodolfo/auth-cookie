@@ -58,7 +58,6 @@ function AppRoutes({ history, token: newToken, permission }) {
           {/* <Route exact path="/" component={Login} /> */}
 
           <LoginRoute
-            exact
             path="/login"
             component={Login}
             token={token}
@@ -66,6 +65,7 @@ function AppRoutes({ history, token: newToken, permission }) {
           />
 
           <PrivateRoute
+            exact
             path="/"
             token={token}
             component={Dashboard}
