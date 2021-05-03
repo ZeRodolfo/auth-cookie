@@ -10,10 +10,10 @@ function* signIn({ payload }) {
       password: payload.password,
     });
 
-    Cookies.set("ACCESS", "teste", { domain: "jobzera.netlify.app" });
+    Cookies.set("ACCESS", "teste", { domain: ".netlify.app" });
 
-    Cookies.set("token", response, { path: "/", domain: "jobzera.netlify.app" });
-    Cookies.set("name", "value", { domain: "jobzera.netlify.app" });
+    Cookies.set("token", response, { path: "/", domain: ".netlify.app" });
+    Cookies.set("name", "value", { domain: ".netlify.app" });
 
     console.log("response", response);
     yield put({
@@ -33,7 +33,7 @@ function* signIn({ payload }) {
 
 function logoutSaga() {
   try {
-    Cookies.remove("token", { path: "/", domain: "jobzera.netlify.app" });
+    Cookies.remove("token", { path: "/", domain: ".netlify.app" });
     // Cookies.set("token", "", {});
     alert("Limpei")
 
