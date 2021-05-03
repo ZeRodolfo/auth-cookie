@@ -1,6 +1,7 @@
 {
   "name": "teste_1",
   "version": "0.1.0",
+  "homepage": "https://jobzera.netlify.app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
