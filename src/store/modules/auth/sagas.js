@@ -10,16 +10,6 @@ function* signIn({ payload }) {
       password: payload.password,
     });
 
-    const host = "";
-    let urlResult;
-    if (host === "https://homol.solides.jobs") {
-      urlResult = `homol.solides.jobs`;
-    } else if (host === "https://solides.jobs") {
-      urlResult = `solides.jobs`;
-    } else {
-      urlResult = ".netlify.app";
-    }
-
     Cookies.set("ACCESS", "teste", { domain: "jobzera.netlify.app" });
 
     Cookies.set("token", response, { path: "/", domain: "jobzera.netlify.app" });
