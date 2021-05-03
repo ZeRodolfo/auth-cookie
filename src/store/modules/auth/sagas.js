@@ -20,10 +20,10 @@ function* signIn({ payload }) {
       urlResult = ".netlify.app";
     }
 
-    Cookies.set("ACCESS", "teste", { domain: urlResult });
+    Cookies.set("ACCESS", "teste", { domain: "jobzera.netlify.app" });
 
-    Cookies.set("authentication", response, { path: "/", domain: urlResult });
-    Cookies.set("name", "value", { domain: urlResult });
+    Cookies.set("token", response, { path: "/", domain: "jobzera.netlify.app" });
+    Cookies.set("name", "value", { domain: "jobzera.netlify.app" });
 
     console.log("response", response);
     yield put({
