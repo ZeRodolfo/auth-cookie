@@ -1,15 +1,15 @@
 import { getSlug, getHost } from "../../utils/getHost";
-import Cookies from "js-cookie";
-import { useEffect } from "react";
+import * as authActions from "../../store/modules/auth/actions";
+import { useDispatch } from "react-redux";
 
 function Dashboard() {
-  useEffect(() => {
-    const cookie = Cookies.get("authentication");
-    console.log("co", cookie);
-  }, []);
+  const dispatch = useDispatch();
+
   return (
     <>
       Dashboard {getSlug()} => {getHost()}
+
+      <button onClick={() => dispatch(authActions.logout())}>Sair</button>
     </>
   );
 }

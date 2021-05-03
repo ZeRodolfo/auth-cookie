@@ -31,7 +31,22 @@ function* signIn({ payload }) {
   }
 }
 
+function logoutSaga() {
+  try {
+    Cookies.remove("token", { path: "/", domain: "jobzera.netlify.app" });
+    // Cookies.set("token", "", {});
+    alert("Limpei")
+
+    // window.location.href = "/";
+  } catch (err) {
+    console.log("err", err);
+    // cookie.remove("token");
+  }
+}
+
+
 export default all([
   takeLatest("@authentication/SIGN_IN_REQUEST", signIn),
   // takeLatest("@auth/LOGOUT", logoutSaga),
+  takeLatest("@auth/LOGOUT_REQUEST", logoutSaga),
 ]);
