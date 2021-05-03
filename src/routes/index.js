@@ -45,11 +45,9 @@ const LoginRoute = ({ component: Component, token, ...rest }) => {
 };
 
 function AppRoutes({ history, token: newToken, permission }) {
-  const { authentication } = Cookies.getJSON();
-  const { token } = authentication ? authentication : {};
-  console.log("token", authentication, token, Cookies.getJSON());
+  const { token } = Cookies.getJSON();
 
-  console.log("ok", Cookies.get("ACCESS"));
+  console.log("token", token);
 
   return (
     <BrowserRouter>
