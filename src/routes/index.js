@@ -57,7 +57,7 @@ function AppRoutes({ history, token: newToken, permission }) {
         <Switch>
           {/* <Route exact path="/" component={Login} /> */}
 
-          <Route path="/teste" component={<>OIIIIII</>} /> 
+          <Route path="/teste" component={() => <>OIIIIII</>} /> 
 
           <LoginRoute
             path="/login"
